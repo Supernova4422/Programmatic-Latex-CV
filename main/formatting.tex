@@ -1,0 +1,39 @@
+% !TEX program = xelatex
+\documentclass[a4Paper, 12pt]{report}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{multiaudience}
+\usepackage{lipsum}
+
+\input{audiences.tex} % Configure multiaudience. File is generated.
+
+
+\setlength{\emergencystretch}{3em}
+\geometry{ margin=0.75in}
+
+\definecolor{blue}{rgb}{0.066,0.33,0.8}
+\definecolor{grey}{rgb}{0.25,0.25,0.25}
+
+\sectionfont{\color{blue}}
+\titlespacing*\section{0pt}{6pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+% Comment out the following two lines to use a different font
+\usepackage[default,scale=0.95]{opensans}
+\usepackage[T1]{fontenc}
+
+%\setmainfont{Helvetica}
+
+%\setmainfont[Path=../fonts/,
+%    BoldItalicFont=Calibri Bold Italic.ttf,
+%    BoldFont      =Calibri Bold.ttf,
+%    ItalicFont    =Calibri Italic.ttf]{Calibri.ttf}
+
+\showto{-, AUDIENCEonePage}{
+\newcommand{\JobSection}[4]{\subsection*{\normalsize#1\hfill\normalfont\color{grey}\normalsize\textbf{#2}\newline\normalfont\normalsize\emph{#3}\normalsize\hfill\color{grey}\normalsize\textbf{#4}}}
+}
+\showto{AUDIENCEonePage}{
+\newcommand{\JobSection}[4]{\subsection*{\normalsize#1 - \normalfont\color{grey}\normalsize\emph{#3}\normalsize\hfill\color{grey}\normalsize\textbf{#2}}}
+}

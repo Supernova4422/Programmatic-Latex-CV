@@ -1,0 +1,51 @@
+\input{formatting.tex}
+\begin{document}
+\input{header.tex}
+
+\begin{shownto}{-, AUDIENCEonePage}% Everyone but onepage
+	\section*{Career Objective}
+	\input{../objectives/obj.tex}
+\end{shownto}
+
+\section*{Education}
+\input{../education/education.tex}
+
+\section*{Employment Experience}
+\input{../jobs/job1.tex}
+\begin{shownto}{AUDIENCEtwo}% Only audience two
+	\input{../jobs/job2.tex}
+\end{shownto}
+\begin{shownto}{-, AUDIENCEtwo}% Everyone but audience two
+	\input{../jobs/job3.tex}
+\end{shownto}
+
+
+
+\begin{shownto}{-, AUDIENCEonePage}%
+	\section*{Software Projects}
+	\input{../projects/project1.tex}
+	\begin{shownto}{AUDIENCEtwo}% Only audience two and not one page
+	\input{../projects/project2.tex}
+	\end{shownto}
+	\begin{shownto}{-, AUDIENCEtwo}% Not audience two
+	\input{../projects/project3.tex}
+	\end{shownto}
+\end{shownto}
+\section*{Technical Skills}
+	\input{../skills/skillTable.tex}
+	\section*{Achievements}
+	\input{../skills/shortSkill.tex}
+	\\
+	\input{../skills/shortSkill.tex}
+\begin{shownto}{-, AUDIENCEonePage}% Only for >1 page
+	\section*{Soft Skills}
+		\input{../skills/longSkill.tex}
+		\\ \normalsize
+	\begin{shownto}{AUDIENCEone, AUDIENCEthree}% Only audience one and three
+		\input{../skills/longSkill.tex}
+	\end{shownto}
+	\begin{shownto}{AUDIENCEtwo}% Only audience two
+		\input{../skills/longSkill.tex}
+	\end{shownto}
+\end{shownto}
+\end{document}
